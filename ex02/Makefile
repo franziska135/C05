@@ -18,7 +18,8 @@ CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 AR		=	ar rc
 RM		=	rm -f
 
-SRC		=	main.cpp Bureaucrat.cpp AForm.cpp
+SRC		=	main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
+			ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

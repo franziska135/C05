@@ -7,7 +7,7 @@
 class Bureaucrat;
 
 class AForm {
-    private:
+    protected:
         const std::string _name;
         bool        _signed;
         const int   _gradeSign;
@@ -36,6 +36,14 @@ class AForm {
         };
 
         class   GradeTooLowException : public std::exception {
+            public:
+                const char* what () const throw();
+        };
+        class   FormNotSigned : public std::exception {
+            public:
+                const char* what () const throw();
+        };
+        class   NeitherGradeNorSigned : public std::exception {
             public:
                 const char* what () const throw();
         };
