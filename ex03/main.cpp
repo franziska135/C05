@@ -18,112 +18,18 @@
 
 int main() {
     try {
-        // Bureaucrat jules("Jules", 75);
-        // std::cout << jules << std::endl;
-
-        // Bureaucrat werner("Werner", 3);
-        // std::cout << werner << std::endl;
-        
-        // std::cout << std::endl;
-        
-        // std::cout << "------------------------------------------" << std::endl;
-        // std::cout << "--------PRESIDENTIALPARDON TEST----------" << std::endl;
-        // std::cout << "------------------------------------------" << std::endl;
-
-        // std::cout << std::endl;
-        // PresidentialPardonForm  lala("PPF");
-        // std::cout << std::endl;
-        // std::cout << lala << std::endl;
-        // jules.execute(lala);
-        // werner.execute(lala);
-        // std::cout << std::endl;
-        // jules.signForm(lala);
-        // werner.signForm(lala);
-        // std::cout << std::endl;
-        // std::cout << lala << std::endl;
-        // werner.execute(lala);
-        // std::cout << std::endl;
-        // std::cout << "------------------------------------------" << std::endl;
-        // std::cout << "--------SHRUBBERY TEST----------" << std::endl;
-        // std::cout << "------------------------------------------" << std::endl;
-        // std::cout << std::endl;
-        // ShrubberyCreationForm hehe("SCF");
-        // std::cout << std::endl;
-        // std::cout << hehe << std::endl;
-        // werner.execute(hehe);
-        // std::cout << std::endl;
-        // werner.signForm(hehe);
-        // std::cout << std::endl;
-        // std::cout << hehe << std::endl;
-        // werner.execute(hehe);
-        // std::cout << std::endl;
-
-        // std::cout << "------------------------------------------" << std::endl;
-        // std::cout << "--------ROBOTOMYREQUESTFORM TEST----------" << std::endl;
-        // std::cout << "------------------------------------------" << std::endl;
-        
-        // std::cout << std::endl;
-        // std::cout << std::endl;
-        // RobotomyRequestForm hui("RRF");
-        // std::cout << std::endl;
-        // std::cout << hui << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.signForm(hui);
-        // std::cout << std::endl;
-        // std::cout << hui << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);        
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);        
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-        // std::cout << std::endl;
-        // werner.execute(hui);
-
-        // std::cout << std::endl;
         Intern someRandomIntern;
         AForm* rrf;
         std::cout << std::endl;
         rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-        if (rrf)
-            delete rrf;
         std::cout << std::endl;
         AForm* gibberish;
         gibberish = someRandomIntern.makeForm("gibberish", "Yelly");
+        std::cout << std::endl;
         if (gibberish)
             delete gibberish;
+        if (rrf)
+            delete rrf;
         std::cout << std::endl;
     }
     
