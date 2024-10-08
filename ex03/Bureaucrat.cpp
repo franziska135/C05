@@ -30,18 +30,22 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
     return *this;
 }
 
-//desctructor
 Bureaucrat::~Bureaucrat  () {
     std::cout   << "Bureaucrat Destructor called"
                 << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name) {
-    if (grade < 1)
-        throw GradeTooHighException();
-    if (grade > 150)
-        throw GradeTooLowException();
-    _grade = grade;
+    try {
+        if (grade < 1)
+            throw GradeTooHighException();
+        if (grade > 150)
+            throw GradeTooLowException();
+        _grade = grade;
+    }
+    catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw () {
@@ -61,20 +65,30 @@ const std::string Bureaucrat::getName() const {
 }
 
 void    Bureaucrat::incGrade() {
-    if (getGrade() == 1)
-        throw GradeTooHighException ();
-    _grade--;
+    try {
+        if (getGrade() == 1)
+            throw GradeTooHighException ();
+        _grade--;
+    }
+    catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
 }
 
 void    Bureaucrat::decGrade() {
-    if (getGrade() == 150)
-        throw GradeTooLowException ();
-    _grade++;
+    try {
+        if (getGrade() == 150)
+            throw GradeTooLowException ();
+        _grade++;
+    }
+    catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
 }
 
 std::ostream&  operator<<(std::ostream& os, const Bureaucrat& other) {
     os  << other.getName()
-        << ", bureaucrat grade "
+        << " is a bureaucrat of grade "
         << other.getGrade();
     return (os);
 }

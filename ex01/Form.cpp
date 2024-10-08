@@ -1,13 +1,16 @@
 #include "Form.hpp"
 
-//constructors
 Form::Form() : _name("default"), _signed (false) , _gradeSign(150), _gradeExec(150) {
-    std::cout   << "Form default constructor" << std::endl;
+    std::cout   << "Form constructor for form " 
+                << _name
+                << std::endl;
 }
 
 Form::Form (const Form &other) : _name(other._name), _signed(other._signed), 
     _gradeSign(other._gradeSign), _gradeExec(other._gradeExec) {
-    std::cout   << "Form copy constructor" << std::endl;
+    std::cout   << "Form constructor for form " 
+                << _name
+                << std::endl;
     *this = other;
 }
 
@@ -20,14 +23,20 @@ Form& Form::operator=(const Form& other) {
 
 Form::Form (const std::string name, int gradeSign, int gradeExec) : _name(name),
             _signed(false), _gradeSign(gradeSign), _gradeExec(gradeExec) {
-    std::cout   << "Form construcor is called" << std::endl;
-    if (gradeSign < 1 || gradeExec < 1)
-        throw GradeTooHighException();
-    if (gradeSign > 150 || gradeExec > 150)
-        throw GradeTooLowException();
+    try {
+        std::cout   << "Form constructor for form '" 
+                    << _name
+                    << "' is called" << std::endl;
+        if (gradeSign < 1 || gradeExec < 1)
+            throw GradeTooHighException();
+        if (gradeSign > 150 || gradeExec > 150)
+            throw GradeTooLowException();
+    }
+    catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
 }
 
-//destructor
 Form::~Form() {
     std::cout   << "Form destructor" << std::endl;
 }
@@ -49,10 +58,10 @@ int   Form::getGradeExec(void) const {
 }
 
 void    Form::beSigned(Bureaucrat& Bureaucrat) {
-    if (Bureaucrat.getGrade() <= this->_gradeSign)
-        this->_signed = true;
-    else
-        throw GradeTooLowException();
+        if (Bureaucrat.getGrade() <= this->_gradeSign)
+            this->_signed = true;
+        else
+            throw GradeTooLowException();
 }
 
 const char* Form::GradeTooHighException::what() const throw () {
@@ -60,7 +69,7 @@ const char* Form::GradeTooHighException::what() const throw () {
 }
 
 const char* Form::GradeTooLowException::what() const throw () {
-    return "Gradeis too low.";
+    return "Grade is too low.";
 }
 
 std::ostream&  operator<<(std::ostream& os, const Form& other) {

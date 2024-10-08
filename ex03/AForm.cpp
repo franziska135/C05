@@ -12,7 +12,6 @@
 
 #include "AForm.hpp"
 
-//constructors
 AForm::AForm() : _name("default"), _signed (false) , _gradeSign(150), _gradeExec(150) {
     std::cout   << "AForm default constructor" << std::endl;
 }
@@ -32,14 +31,20 @@ AForm& AForm::operator=(const AForm& other) {
 
 AForm::AForm (const std::string name, int gradeSign, int gradeExec) : _name(name),
             _signed(false), _gradeSign(gradeSign), _gradeExec(gradeExec) {
-    std::cout   << "AForm construcor is called" << std::endl;
-    if (gradeSign < 1 || gradeExec < 1)
-        throw GradeTooHighException();
-    if (gradeSign > 150 || gradeExec > 150)
-        throw GradeTooLowException();
+    try {
+        std::cout   << "Form constructor; form name: '" 
+                    << _name
+                    << "' is called" << std::endl;
+        if (gradeSign < 1 || gradeExec < 1)
+            throw GradeTooHighException();
+        if (gradeSign > 150 || gradeExec > 150)
+            throw GradeTooLowException();
+    }
+    catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
 }
 
-//destructor
 AForm::~AForm() {
     std::cout   << "AForm destructor" << std::endl;
 }
