@@ -13,17 +13,14 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm (void) : AForm("PresidentialPardonForm", 25, 5), _target("hw") {
-    std::cout   << "PresidentialPardonForm default constructor" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm (const std::string target) :
     AForm("PresidentialPardonForm", 25, 5), _target(target) {
-    std::cout   << "PresidentialPardonForm constructor" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm (const PresidentialPardonForm& other) : AForm(other),
     _target(other._target) {
-    std::cout   << "PresidentialPardonForm copy constructor" << std::endl;
 }
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other) {
     if (this != &other) {
@@ -32,12 +29,9 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
     }
     return *this;
 }
-        
 
 PresidentialPardonForm::~PresidentialPardonForm (void) {
-    std::cout   << "PresidentialPardonForm default destructor" << std::endl;
 }
-
 
 void        PresidentialPardonForm::execute(Bureaucrat const &executor) const {
         if (executor.getGrade() > this->_gradeExec && !this->getSigned()) 

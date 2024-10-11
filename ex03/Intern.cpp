@@ -14,24 +14,18 @@
 #include "Intern.hpp"
 
 Intern::Intern(void) {
-    std::cout   << "Intern default constructor" << std::endl;
 }
 
 Intern::Intern(const Intern& other) {
     *this = other;
-    std::cout   << "Intern copy constructor" << std::endl;
 }
 
 Intern& Intern::operator=(const Intern& other) {
     (void)other;
-    std::cout   << "Intern copy assignment constructor" << std::endl;
     return *this;
 }
 
-//desctructor
 Intern::~Intern  () {
-    std::cout   << "Intern Destructor called"
-                << std::endl;
 }
 
 AForm* createShrubberyForm(const std::string target) {

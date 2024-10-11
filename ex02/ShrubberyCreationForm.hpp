@@ -30,6 +30,11 @@ class ShrubberyCreationForm : public AForm {
         ShrubberyCreationForm                (const std::string target);
         ~ShrubberyCreationForm               (void);
         void        execute(Bureaucrat const &executor) const;
+
+        class   FileCreationUnsuccessful : public std::exception {
+            public:
+                const char* what () const throw();
+        };
 };
 
 #endif

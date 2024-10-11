@@ -15,19 +15,16 @@
 #include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm (void) : AForm("RobotomyRequestForm", 72, 45), _target("hw") {
-    std::cout   << "RobotomyRequestForm default constructor" << std::endl;
     srand(time(0));    
 }
 
 RobotomyRequestForm::RobotomyRequestForm (const std::string target) :
     AForm("RobotomyRequestForm", 72, 45), _target(target) {
-    std::cout   << "RobotomyRequestForm constructor" << std::endl;
     srand(time(0));
 }
 
 RobotomyRequestForm::RobotomyRequestForm (const RobotomyRequestForm& other) : AForm(other),
     _target(other._target) {
-    std::cout   << "RobotomyRequestForm copy constructor" << std::endl;
 }
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
     if (this != &other) {
@@ -38,7 +35,6 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 }
 
 RobotomyRequestForm::~RobotomyRequestForm (void) {
-    std::cout   << "RobotomyRequestForm default destructor" << std::endl;
 }
 
 void        RobotomyRequestForm::execute(Bureaucrat const &executor) const {
@@ -49,9 +45,9 @@ void        RobotomyRequestForm::execute(Bureaucrat const &executor) const {
         else if (!this->getSigned())
             throw   FormNotSigned();
         if (rand() % 2 == 0) {
-            std::cout   << "Robotomy on '"
+            std::cout   << "Robotomy on "
                         << _target
-                        << "' was a success!"
+                        << " was a success!"
                         << std::endl;
         }
         else {

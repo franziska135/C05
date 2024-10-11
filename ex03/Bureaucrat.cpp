@@ -14,38 +14,28 @@
 
 Bureaucrat::Bureaucrat(void) : _name("default") {
     _grade = 0;
-    std::cout   << "Bureaucrat default constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) {
     *this = other;
-    std::cout   << "Bureaucrat copy constructor" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
     if (this != &other) {
         _grade = other.getGrade();
     }
-    std::cout   << "Bureaucrat copy assignment constructor" << std::endl;
     return *this;
 }
 
 Bureaucrat::~Bureaucrat  () {
-    std::cout   << "Bureaucrat Destructor called"
-                << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name) {
-    try {
-        if (grade < 1)
-            throw GradeTooHighException();
-        if (grade > 150)
-            throw GradeTooLowException();
-        _grade = grade;
-    }
-    catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
+    if (grade < 1)
+        throw GradeTooHighException();
+    if (grade > 150)
+        throw GradeTooLowException();
+    _grade = grade;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw () {
@@ -65,25 +55,15 @@ const std::string Bureaucrat::getName() const {
 }
 
 void    Bureaucrat::incGrade() {
-    try {
-        if (getGrade() == 1)
-            throw GradeTooHighException ();
-        _grade--;
-    }
-    catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
+    if (getGrade() == 1)
+        throw GradeTooHighException ();
+    _grade--;
 }
 
 void    Bureaucrat::decGrade() {
-    try {
-        if (getGrade() == 150)
-            throw GradeTooLowException ();
-        _grade++;
-    }
-    catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
+    if (getGrade() == 150)
+        throw GradeTooLowException ();
+    _grade++;
 }
 
 std::ostream&  operator<<(std::ostream& os, const Bureaucrat& other) {
@@ -97,19 +77,46 @@ void    Bureaucrat::signForm(AForm& form) {
     try {
         form.beSigned(*this);
     }
-    catch (const std::exception &e) {
-        std::cout   << _name << " could not sign Form '" << form.getName()
-                    << "' because " << e.what()         << std::endl;
+    catch (const std::exception& e) {
+        std::cout   << _name << " could not sign Form " << form.getName() << " beacause " << e.what() << std::endl;
     }
 }
 
 void    Bureaucrat::execute(AForm const &form) {
     try {
-        form.execute(*this); 
-        std::cout << "(" << this->getName() << " executed " << form.getName() << ")" << std::endl;
+            form.execute(*this); 
+            std::cout << "(" << this->getName() << " executed " << form.getName() << ")" << std::endl;
     }
     catch (const std::exception& e) {
-        std::cout << this->getName() << " couldn't execute " << form.getName()
-                  << " because " << e.what() << std::endl;
+        std::cout << _name << " could not execute " << form.getName() << " beacause " << e.what() << std::endl;
     }
 }
+
+// void    Bureaucrat::signForm(AForm& form) {
+//     if (this->getGrade() <= form.getGradeSign()) {
+//             form.beSigned(*this);
+//     }
+//     else {
+//         std::cout   << _name << " could not sign Form '" << form.getName()
+//                     << "' because: grade is too low." << std::endl;
+//     }
+// }
+
+
+// void    Bureaucrat::execute(AForm const &form) {
+//     try {
+//         if (this->getGrade() <= form.getGradeExec() && form.getSigned()) {
+//             form.execute(*this); 
+//             std::cout << "(" << this->getName() << " executed " << form.getName() << ")" << std::endl;
+//         }
+//         else if (!form.getSigned() && this->getGrade() > form.getGradeExec())
+//             std::cout << _name << " could not execute " << form.getName() << " beacause " << "grade too low and form is not signed " << std::endl;
+//         else if (!form.getSigned())
+//             std::cout << _name << " could not execute " << form.getName() << " beacause " << "form is not signed" << std::endl;
+//         else
+//             std::cout << _name << " could not execute " << form.getName() << " beacause " << "grade too low" << std::endl;
+//     }
+//     catch (const std::exception& e) {
+//         std::cerr << e.what() << std::endl;
+//     }
+// }
