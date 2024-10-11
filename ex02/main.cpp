@@ -118,60 +118,56 @@ int main() {
         std::cout << " 3 | Executing the Robotomy Request Form" << std::endl;
         std::cout << "-----" << std::endl;
         werner3.execute(hui);
+        std::cout << std::endl;
+        std::cout << "-----\n|";
+        std::cout << " 4 | Executing the Robotomy Request Form a few more times" << std::endl;
+        std::cout << "-----" << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);        
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);        
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+        std::cout << std::endl;
+        werner3.execute(hui);
+
+        std::cout << std::endl;
+        std::cout   << "-------------------\n"
+                << "Tests are finished"
+                << "\n-------------------"
+                << std::endl;
     }
+    
     catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
-    //     std::cout << std::endl;
-    //     std::cout << "-----\n|";
-    //     std::cout << " 4 | Executing the Robotomy Request Form a few more times" << std::endl;
-    //     std::cout << "-----" << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);        
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);        
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-    //     std::cout << std::endl;
-    //     werner.execute(hui);
-
-    //     std::cout << std::endl;
-    //     std::cout   << "-------------------\n"
-    //             << "Tests are finished"
-    //             << "\n-------------------"
-    //             << std::endl;
-    // }
-    
-    // catch (const std::exception& e) {
-    //     std::cerr << e.what() << std::endl;
-    // }
 }

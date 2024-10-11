@@ -91,32 +91,3 @@ void    Bureaucrat::execute(AForm const &form) {
         std::cout << _name << " could not execute " << form.getName() << " beacause " << e.what() << std::endl;
     }
 }
-
-// void    Bureaucrat::signForm(AForm& form) {
-//     if (this->getGrade() <= form.getGradeSign()) {
-//             form.beSigned(*this);
-//     }
-//     else {
-//         std::cout   << _name << " could not sign Form '" << form.getName()
-//                     << "' because: grade is too low." << std::endl;
-//     }
-// }
-
-
-// void    Bureaucrat::execute(AForm const &form) {
-//     try {
-//         if (this->getGrade() <= form.getGradeExec() && form.getSigned()) {
-//             form.execute(*this); 
-//             std::cout << "(" << this->getName() << " executed " << form.getName() << ")" << std::endl;
-//         }
-//         else if (!form.getSigned() && this->getGrade() > form.getGradeExec())
-//             std::cout << _name << " could not execute " << form.getName() << " beacause " << "grade too low and form is not signed " << std::endl;
-//         else if (!form.getSigned())
-//             std::cout << _name << " could not execute " << form.getName() << " beacause " << "form is not signed" << std::endl;
-//         else
-//             std::cout << _name << " could not execute " << form.getName() << " beacause " << "grade too low" << std::endl;
-//     }
-//     catch (const std::exception& e) {
-//         std::cerr << e.what() << std::endl;
-//     }
-// }
