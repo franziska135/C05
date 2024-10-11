@@ -56,17 +56,17 @@ void        ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
         return ;
     }    
     oFile   << "      oooooooooo\n"
-            << "  000000000000000000\n"
-            << " 00000000000000000000\n"
+            << "  oooooooooooooooooo\n"
+            << " oooooooooooooooooooo\n"
             << "ooooooooooooooooooooo\n"
             << " ooooooooooooooooooo\n"
             << "  oo\\\\\\||||////oo \n"
             << "      \\\\||||///\n"
-            << "      |||||||||\n"
-            << "      |||||||||\n"
-            << "      |||||||||\n"         
-            << " ....//||||||||\\.......\n"
-            << "....///||||||||\\\\.......\n"
+            << "      |||||||||        ooooo\n"
+            << "      |||||||||      oooooooo\n"
+            << "      |||||||||       oooooo\n"    
+            << "     //||||||||\\        ||\n"
+            << "....///||||||||\\\\.......||..\n"
             << std::endl;
     std::cout   << _target
                     << " has been executed successfully"

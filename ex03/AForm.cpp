@@ -32,9 +32,7 @@ AForm& AForm::operator=(const AForm& other) {
 AForm::AForm (const std::string name, int gradeSign, int gradeExec) : _name(name),
             _signed(false), _gradeSign(gradeSign), _gradeExec(gradeExec) {
     try {
-        std::cout   << "Form constructor; form name: '" 
-                    << _name
-                    << "' is called" << std::endl;
+        std::cout   << "AForm constructor called" << std::endl;
         if (gradeSign < 1 || gradeExec < 1)
             throw GradeTooHighException();
         if (gradeSign > 150 || gradeExec > 150)
